@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from 'cors';
 import connectDB from "./src/config/db";
 import phraseRoutes from "./src/routes/Phrase.route";
 
@@ -9,6 +10,8 @@ dotenv.config();
 const app = express();
 
 
+
+app.use(cors());
 app.use(express.json()); // Middleware pour parser les JSON dans les requêtes
 
 

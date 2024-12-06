@@ -4,7 +4,7 @@ import { getPhrases, addTranslations } from "../controllers/Phrase.controllers";
 const router = Router();
 
 router.get("/phrases", getPhrases);
-router.post("/add-translation", addTranslations);
+router.post("/add-translations", addTranslations);
 
 
 export default router;

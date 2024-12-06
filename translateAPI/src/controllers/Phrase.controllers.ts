@@ -1,4 +1,5 @@
 import {Request, Response} from "express";
+//import PhraseT from "../models/Phrase.modelTest";
 import Phrase from "../models/Phrase.model";
 
 
@@ -21,12 +22,12 @@ export const getPhrases = async (req: Request, res: Response) => {
       const total = await Phrase.countDocuments({ French: "" });
   
       // Retourner les résultats avec des informations de pagination
-      res.json({
+      res.status(200).json({
         page,
         limit,
         total,
         totalPages: Math.ceil(total / limit),
-        data: phrases,
+        phrases,
       });
     } catch (error) {
       console.error("Error fetching phrases:", error);
